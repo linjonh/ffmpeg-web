@@ -55,7 +55,7 @@ jobs:
           node-version: 23
       - name: Install node dependencies
         run: |
-            npm install -g
+            npm install
             export PATH=`pwd`/node_modules/bower/bin:`pwd`/node_modules/less/bin:$PATH
             make
       - name: Set up Python
