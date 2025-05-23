@@ -19,3 +19,14 @@ for r in rep:
 # array=json.loads(rep)
 # print(array)
 
+my_dic:dict={}
+my_dic2:dict={}
+
+for i,s in enumerate(rep):
+    my_dic[i]=s    
+    my_dic2[i]=s    
+print(json.dumps(my_dic,indent=4,ensure_ascii=False))
+for (k,v),d in zip(my_dic.items(),my_dic2):
+    print(f"{k} : {v} ==> {d}")
+
+
