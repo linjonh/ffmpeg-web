@@ -5,3 +5,7 @@
 /htdocs/style.less
 /htdocs/fonts/*.woff2
 /node_modules/
+/.venv
+/htdocs_cn
+__pycache__
+*_cli.py

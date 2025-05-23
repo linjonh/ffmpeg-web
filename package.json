@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "bower": "^1.8.14",
+    "clean-css": "^5.3.3",
+    "less": "^4.3.0"
+  },
+  "name": "web",
+  "version": "1.0.0",
+  "description": "ffmpeg website builder",
+  "main": "make",
+  "scripts": {
+    "make": "make",
+    "clean": "make clean",
+    "build-doc":"./generate-doc.sh ../../shellscript-install/ffmpegMaker/ffmpeg-source/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FFmpeg/web.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "docs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FFmpeg/web/issues"
+  },
+  "homepage": "https://github.com/FFmpeg/web#readme"
+}
