@@ -1,12 +1,14 @@
 import json
 import math
+import os
+import sys
 import time
 import volcenginesdkcore
 import volcenginesdktranslate20250301
 
 
 class VolcanTranslate:
-    def __init__(self):
+    def __init__(self,id="",key=""):
         """
         初始化
         """
@@ -18,12 +20,19 @@ class VolcanTranslate:
         self.configuration.scheme = "http"  # https or http
         self.configuration.debug = False  # 是否开启调试
         self.configuration.logger_file = "sdk.log"
-        with open("volcan_engine_translate.key", "r",encoding="utf-8") as f:
-            s = f.read()
-            str_dict: dict = json.loads(s)
-            self.configuration.ak = str_dict["Access Key ID"]  # 用户的access key
-            self.configuration.sk = str_dict["Secret Access Key"]  # 用户的secret key
-            self.configuration.region = "cn-shanghai"  # 用户的region
+        if os.path.exists("volcan_engine_translate.key") is False:
+            print("volcan_engine_translate.key 文件不存在，请检查文件路径")
+            #尝试读取环境变量
+            self.configuration.ak = id # 用户的access key
+            self.configuration.sk = key  # 用户的secret key
+        else:
+            print("volcan_engine_translate.key 文件存在，继续执行")
+            with open("volcan_engine_translate.key", "r",encoding="utf-8") as f:
+                s = f.read()
+                str_dict: dict = json.loads(s)
+                self.configuration.ak = str_dict["Access Key ID"]  # 用户的access key
+                self.configuration.sk = str_dict["Secret Access Key"]  # 用户的secret key
+        self.configuration.region = "cn-shanghai"  # 用户的region
         # 设置默认配置
         volcenginesdkcore.Configuration.set_default(self.configuration)    
         self.api_instnace = self.get_api_instance()

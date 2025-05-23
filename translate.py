@@ -3,6 +3,7 @@ from concurrent import futures
 from concurrent.futures import ThreadPoolExecutor
 import json
 import re
+import sys
 from types import CoroutineType
 from typing import Any
 from bs4 import BeautifulSoup, Comment, Doctype
@@ -25,7 +26,6 @@ def contains_english(text: str):
 
 pool = ThreadPoolExecutor(max_workers=os.cpu_count())
 
-volcan_translate_ = volcan_translate.VolcanTranslate()
 
 
 async def volcan_trans(arrays: dict[int, str]):
@@ -58,14 +58,15 @@ async def volcan_trans(arrays: dict[int, str]):
     return json.loads(json.dumps(arrays, ensure_ascii=False))
 
 
-def append_task(task: list, text_array: dict[int, str],trans_method: str = "volcan"):
+def append_task(task: list, text_array: dict[int, str], trans_method: str = "volcan"):
     # return task.append(sync_api(prompt=f"翻译下数组里的文案，返回数组：{text_array}"))
     arrays = text_array.copy()
     if len(arrays) == 0:
         return None
     print(f"翻译源数组大小：size{len(arrays)}")
     if trans_method == "chatgpt":
-        json_str = json.dumps(arrays, ensure_ascii=False).replace("'", "&apos;")
+        json_str = json.dumps(
+            arrays, ensure_ascii=False).replace("'", "&apos;")
         prompt = f"翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出：{json_str}"
         return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
@@ -74,7 +75,7 @@ def append_task(task: list, text_array: dict[int, str],trans_method: str = "volc
         raise ValueError("不支持的翻译方法！")
 
 
-async def handle_html_file(html: str, base_name: str):
+async def handle_html_file(html: str, base_name: str, method: str) -> int:
     soup = BeautifulSoup(html, "html.parser")
     leng = 0
     chunk_size = 0
@@ -113,11 +114,11 @@ async def handle_html_file(html: str, base_name: str):
                 chunk_size += len(text)
             else:
                 chunk_size = 0
-                append_task(task, text_array)
+                append_task(task, text_array, method)
                 text_array.clear()
                 # print(f"替换文本: {text} -> {translation_dict[text]}")
     if chunk_size > 0 and chunk_size < 10_000:
-        append_task(task, text_array)
+        append_task(task, text_array, method)
 
     all_results = await asyncio.gather(*task)
     print(f"all_results={len(all_results)} type={type(all_results)}")
@@ -164,9 +165,20 @@ async def handle_html_file(html: str, base_name: str):
 docs_path = "./htdocs"
 docs_path_cn = "./htdocs_cn"
 if __name__ == "__main__":
+    args = sys.argv
+    method = "volcan"
+    id = ""
+    key = ""
+    if len(args) > 1:
+        method = args[1]
+    if len(args) > 2:
+        id = args[2]
+    if len(args) > 3:
+        key = args[3]
+    volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
-    def main():
+    def main(method):
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
         os.system(f"cp -r {docs_path}/. {docs_path_cn}/.")
@@ -186,11 +198,11 @@ if __name__ == "__main__":
                 data = f.read()
                 length += len(data)
                 jobs.append(pool.submit(
-                    asyncio.run, handle_html_file(data, base_name)))
+                    asyncio.run, handle_html_file(data, base_name, method)))
         for job in futures.as_completed(jobs):
             str_length += job.result()
             print(
                 f"{base_name:<30} read size={len(data):>12,}    total size={length:>12,} string_len={str_length:>12,}"
             )
 
-    main()
+    main(method)
