@@ -39,11 +39,14 @@ jobs:
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
       - name: checkout ffmpeg source and build docs
         run: |
-            git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+            git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg
             cd ffmpeg
             git checkout release/7.1
+            echo "ffmpeg version: $(git rev-parse HEAD)"
+            ls -al
             git submodule update --init --recursive
             cd .. && pwd
+            chmod +x ./ffmpeg/configure
             bash ./generate-doc.sh ./ffmpeg
 
       - name: Setup Node.js #node js 上传搜索数据
