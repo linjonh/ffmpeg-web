@@ -9,3 +9,5 @@
 /htdocs_cn
 __pycache__
 *_cli.py
+*.key
+*.log

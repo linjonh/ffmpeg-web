@@ -2,3 +2,4 @@ BeautifulSoup4
 requests
 pysimple-log
 openai
+volcengine-python-sdk==1.1.5

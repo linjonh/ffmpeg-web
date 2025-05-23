@@ -11,7 +11,7 @@
   "scripts": {
     "make": "make",
     "clean": "make clean",
-    "build-doc":"./generate-doc.sh ../../shellscript-install/ffmpegMaker/ffmpeg-source/"
+    "build-doc": "./generate-doc.sh ../../shellscript-install/ffmpegMaker/ffmpeg-source/"
   },
   "repository": {
     "type": "git",
