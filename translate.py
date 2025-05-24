@@ -15,7 +15,7 @@ import volcenginesdktranslate20250301.models.translate_text_response
 from utils import timeCost
 import ast
 
-from azure_openai_cli import call_chatgpt
+# from azure_openai_cli import call_chatgpt
 import volcan_translate
 import volcenginesdktranslate20250301
 
@@ -68,7 +68,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
         json_str = json.dumps(
             arrays, ensure_ascii=False).replace("'", "&apos;")
         prompt = f"翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出：{json_str}"
-        return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
+        # return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
         return task.append(volcan_trans(arrays))
     else:
