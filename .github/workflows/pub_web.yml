@@ -71,14 +71,17 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-      
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./htdocs_cn
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
             # Artifact name  
             name: ${{ env.artifact_name }} # optional, default is artifact
             # A file, directory or wildcard pattern that describes what to upload
-            path: ./htdocs_cn/ 
+            path: ./htdocs_cn 
             # The desired behavior if no files are found using the provided path.
             # Available Options:
             #   warn: Output a warning but do not fail the action
