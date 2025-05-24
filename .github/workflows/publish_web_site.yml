@@ -48,7 +48,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs_
+          path: ./docs_/ffmpeg-docs_volcan_translate
       
   deploy:
     environment:
