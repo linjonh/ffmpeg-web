@@ -202,7 +202,7 @@ if __name__ == "__main__":
         # 创建目录
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
-        os.system(f"cp -r {docs_path}/. {docs_path_cn}/.")
+        os.system(f"rsync -av --exclude='*.html' {docs_path}/ {docs_path_cn}/")
         list_files = glob.glob(f"{docs_path}/*.html")
         log(f"list *.html files size= {len(list_files)}")
         list.sort(list_files)
