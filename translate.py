@@ -194,6 +194,7 @@ if __name__ == "__main__":
 
     @timeCost
     def main(method):
+        os.remove(docs_path_cn, ignore_errors=True)
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
         os.system(f"cp -r {docs_path}/. {docs_path_cn}/.")
