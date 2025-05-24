@@ -25,16 +25,16 @@ libswresample   4. 10.100
 libpostproc    57.  1.100</pre>
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-6.0.1.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-6.0.1.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-6.0.1.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-6.0.1.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-6.0.1.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-6.0.1.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-6.0.1.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n6.0.1">Changelog</a></small>
@@ -61,16 +61,16 @@ libswresample   4.  3.100
 libpostproc    56.  3.100</pre>
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-5.0.3.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-5.0.3.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-5.0.3.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-5.0.3.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-5.0.3.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-5.0.3.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-5.0.3.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n5.0.3">Changelog</a></small>
@@ -98,16 +98,16 @@ libpostproc    55.  3.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.1.11.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-4.1.11.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.1.11.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-4.1.11.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.1.11.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-4.1.11.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.1.11.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n4.1.11">Changelog</a></small>
@@ -135,16 +135,16 @@ libpostproc    55.  1.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.0.6.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-4.0.6.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.0.6.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-4.0.6.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-4.0.6.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-4.0.6.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-4.0.6.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n4.0.6">Changelog</a></small>
@@ -173,16 +173,16 @@ libpostproc    54.  5.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.3.9.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-3.3.9.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.3.9.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-3.3.9.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.3.9.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-3.3.9.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.3.9.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n3.3.9">Changelog</a></small>
@@ -211,16 +211,16 @@ libpostproc    54.  1.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.2.19.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-3.2.19.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.2.19.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-3.2.19.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.2.19.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-3.2.19.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.2.19.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n3.2.19">Changelog</a></small>
@@ -249,16 +249,16 @@ libpostproc    54.  0.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.1.11.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-3.1.11.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.1.11.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-3.1.11.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.1.11.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-3.1.11.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.1.11.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n3.1.11">Changelog</a></small>
@@ -287,16 +287,16 @@ libpostproc    54.  0.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.0.12.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-3.0.12.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.0.12.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-3.0.12.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-3.0.12.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-3.0.12.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-3.0.12.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n3.0.12">Changelog</a></small>
@@ -327,16 +327,16 @@ libpostproc    53.  3.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.7.7.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-2.7.7.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.7.7.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.7.7.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.7.7.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.7.7.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.7.7.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n2.7.7">Changelog</a></small>
@@ -368,16 +368,16 @@ libpostproc    53.  3.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.6.9.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-2.6.9.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.6.9.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.6.9.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.6.9.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.6.9.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.6.9.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n2.6.9">Changelog</a></small>
@@ -409,16 +409,16 @@ libpostproc    53.  3.100</pre>
 
   <div class="row">
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.5.11.tar.xz">Download xz tarball</a>
-      <small><a href="releases/ffmpeg-2.5.11.tar.xz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.xz">Download xz tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.xz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.5.11.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.5.11.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3">
-      <a class="btn btn-success" href="releases/ffmpeg-2.5.11.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.5.11.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.5.11.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-3 text-right">
       <small><a href="https://git.ffmpeg.org/gitweb/ffmpeg.git/shortlog/n2.5.11">Changelog</a></small>
@@ -450,12 +450,12 @@ libpostproc    53.  0.100</pre>
 
   <div class="row">
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.4.14.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.4.14.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.4.14.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.4.14.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.4.14.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.4.14.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.4.14.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.4.14.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4 text-right">
       <small><a href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n2.4.14">Changelog</a></small>
@@ -487,12 +487,12 @@ libpostproc    52.  3.100</pre>
 
   <div class="row">
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.3.6.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.3.6.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.3.6.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.3.6.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.3.6.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.3.6.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.3.6.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.3.6.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4 text-right">
       <small><a href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n2.3.6">Changelog</a></small>
@@ -523,12 +523,12 @@ libpostproc    52.  3.100</pre>
 
   <div class="row">
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.2.16.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.2.16.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.2.16.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.2.16.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.2.16.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.2.16.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.2.16.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.2.16.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4 text-right">
       <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n2.2.16">Changelog</a>
@@ -559,12 +559,12 @@ libpostproc    52.  3.100</pre>
 
   <div class="row">
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.1.8.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-2.1.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.1.8.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.1.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-2.1.8.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-2.1.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.1.8.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-2.1.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4 text-right">
       <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n2.1.8">Changelog</a>
@@ -594,12 +594,12 @@ libpostproc    52.  3.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-2.0.7.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-2.0.7.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.0.7.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-2.0.7.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-2.0.7.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-2.0.7.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-2.0.7.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-2.0.7.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n2.0.7">Changelog</a>
@@ -629,12 +629,12 @@ libpostproc    52.  2.100</pre>
 
   <div class="row">
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-1.2.12.tar.bz2">Download bzip2 tarball</a>
-      <small><a href="releases/ffmpeg-1.2.12.tar.bz2.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2">Download bzip2 tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.bz2.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4">
-      <a class="btn btn-success" href="releases/ffmpeg-1.2.12.tar.gz">Download gzip tarball</a>
-      <small><a href="releases/ffmpeg-1.2.12.tar.gz.asc">PGP signature</a></small>
+      <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.gz">Download gzip tarball</a>
+      <small><a href="https://ffmpeg.org/releases/ffmpeg-1.2.12.tar.gz.asc">PGP signature</a></small>
     </div> <!-- col -->
     <div class="col-md-4 text-right">
       <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n1.2.12">Changelog</a>
@@ -664,12 +664,12 @@ libpostproc    52.  2.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-1.1.16.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-1.1.16.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.1.16.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-1.1.16.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-1.1.16.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-1.1.16.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.1.16.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-1.1.16.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n1.1.16">Changelog</a>
@@ -699,12 +699,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-1.0.10.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-1.0.10.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.0.10.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-1.0.10.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-1.0.10.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-1.0.10.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-1.0.10.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-1.0.10.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n1.0.10">Changelog</a>
@@ -734,12 +734,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.11.5.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.11.5.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.11.5.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.11.5.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.11.5.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.11.5.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.11.5.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.11.5.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.11.5">Changelog</a>
@@ -768,12 +768,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.10.16.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.10.16.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.10.16.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.10.16.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.10.16.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.10.16">Changelog</a>
@@ -791,12 +791,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.9.4.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.9.4.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.9.4.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.9.4.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.9.4.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.9.4.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.9.4.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.9.4.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.9.4">Changelog</a>
@@ -814,12 +814,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.8.15.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.8.15.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.8.15.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.8.15.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.8.15.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.8.15.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.8.15.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.8.15.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.8.15">Changelog</a>
@@ -836,12 +836,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.7.17.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.7.17.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.7.17.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.7.17.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.7.17.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.7.17.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.7.17.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.7.17.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.7.17">Changelog</a>
@@ -858,12 +858,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.6.7.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.6.7.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.6.7.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.6.7.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.6.7.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.6.7.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.6.7.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.6.7.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.6.7">Changelog</a>
@@ -883,12 +883,12 @@ libpostproc    52.  0.100</pre>
 
 <div class="row">
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.5.15.tar.bz2">Download bzip2 tarball</a>
-    <small><a href="releases/ffmpeg-0.5.15.tar.bz2.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.5.15.tar.bz2">Download bzip2 tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.5.15.tar.bz2.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4">
-    <a class="btn btn-success" href="releases/ffmpeg-0.5.15.tar.gz">Download gzip tarball</a>
-    <small><a href="releases/ffmpeg-0.5.15.tar.gz.asc">PGP signature</a></small>
+    <a class="btn btn-success" href="https://ffmpeg.org/releases/ffmpeg-0.5.15.tar.gz">Download gzip tarball</a>
+    <small><a href="https://ffmpeg.org/releases/ffmpeg-0.5.15.tar.gz.asc">PGP signature</a></small>
   </div> <!-- col -->
   <div class="col-md-4 text-right">
     <a class="btn btn-success" href="https://git.videolan.org/?p=ffmpeg.git;a=shortlog;h=n0.5.15">Changelog</a>
