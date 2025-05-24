@@ -190,11 +190,16 @@ if __name__ == "__main__":
         id = args[2]
     if len(args) > 3:
         key = args[3]
+    log(f"method={method} id={id} key={key}")
     volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
     def main(method):
-        os.remove(docs_path_cn, ignore_errors=True)
+        # try:
+        #     os.remove(docs_path_cn)
+        # except Exception as e:
+        #     log(f"remove {docs_path_cn} error={e}")
+        # 创建目录
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
         os.system(f"cp -r {docs_path}/. {docs_path_cn}/.")

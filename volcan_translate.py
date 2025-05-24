@@ -21,7 +21,7 @@ class VolcanTranslate:
         self.configuration.debug = False  # 是否开启调试
         self.configuration.logger_file = "sdk.log"
         if os.path.exists("volcan_engine_translate.key") is False:
-            print("volcan_engine_translate.key 文件不存在，请检查文件路径")
+            print(f"volcan_engine_translate.key 文件不存在，使用传入参数{id} {key}进行初始化")
             #尝试读取环境变量
             self.configuration.ak = id # 用户的access key
             self.configuration.sk = key  # 用户的secret key
