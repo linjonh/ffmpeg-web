@@ -72,7 +72,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
     log(f"翻译源数组大小：size={len(arrays.values())}")
     if trans_method == "chatgpt":
         json_str = json.dumps(
-            arrays, ensure_ascii=False).replace("'", "&apos;")
+            arrays, indent=4, ensure_ascii=False).replace("'", "&apos;")
         prompt = f"翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出：{json_str}"
         return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
@@ -209,7 +209,7 @@ if __name__ == "__main__":
     volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
-    def main(method, file_spec="*.html",force_replace=False):
+    def main(method, file_spec="*.html", force_replace=False):
         # try:
         #     os.remove(docs_path_cn)
         # except Exception as e:
@@ -245,4 +245,4 @@ if __name__ == "__main__":
                 f"===> complete trans file : {base_name:<30} read size={len(data):>12,}    total size={length:>12,} string_len={str_length:>12,}"
             )
 
-    main(method, file_spec="*.html",force_replace=True)
+    main(method, file_spec="*.html", force_replace=True)
