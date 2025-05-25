@@ -43,3 +43,5 @@ platform.html                  words=      10,053
 security.html                  words=     140,278
 shame.html                     words=         319
 spi.html                       words=       3,453
+
+Total words: 5,558,188 words

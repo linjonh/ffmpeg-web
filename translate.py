@@ -69,12 +69,6 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
     arrays = text_array.copy()
     if len(arrays) == 0:
         return None
-    for i, text in arrays.items():
-        # log(f"i={i} text={text}")
-        if len(text) > CHUNCK_SIZE:
-            # log(f"i={i} text length > {CHUNCK_SIZE} text={text}")
-            arrays[i] = text[:CHUNCK_SIZE]
-            arrays[i + 1] = text[CHUNCK_SIZE:]
     log(f"翻译源数组大小：size={len(arrays.values())}")
     if trans_method == "chatgpt":
         json_str = json.dumps(
@@ -116,12 +110,12 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
                 log("skip script, style, noscript ")
                 continue
 
-            text = node.strip()
-            if not text or not contains_english(text):
+            node_text = node.strip()
+            if not node_text or not contains_english(node_text):
                 # log(f"skip no english word text=[{text}]")
                 continue
             # 需要把dict 的key也要算进字符数
-            size = len({f"{i}": text})
+            size = len({f"{i}": node_text})
             count_leng += size
             # TextList[String] 待翻译列表列表长度不超过16 总文本长度不超过5000字符
             if len(text_will_trans_array) < 16 and chunk_size+size < CHUNCK_SIZE:
@@ -131,7 +125,7 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
                 append_task(task, text_will_trans_array, method)
                 text_will_trans_array.clear()
             # 后置递增添加
-            text_will_trans_array[i] = text
+            text_will_trans_array[i] = node_text
             nodes[i] = node
     if chunk_size > 0 and chunk_size < CHUNCK_SIZE:
         append_task(task, text_will_trans_array, method)
@@ -150,10 +144,10 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
     for i, node in nodes.items():
         node: PageElement
         log(f"【{i}】before {node}")
-        text = translated_arry.get(str(i), "").strip()
-        if text != "":
-            node.replace_with(text)
-            log(f"【{i}】after ====> {text}")
+        node_text = translated_arry.get(str(i), "").strip()
+        if node_text != "":
+            node.replace_with(node_text)
+            log(f"【{i}】after ====> {node_text}")
         else:
             log(f"【{i}】after ====> not tranlate")
     with open(f"{docs_path_cn}/{base_name}", "w", encoding="utf-8") as f:
@@ -177,6 +171,18 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
 #     # log(f"node: {node} string=【{trans_txt}】")
 #     arry=json.loads(trans_txt)
 #     return arry
+
+def count_words():
+    total_words =0
+    with open(f'./words_length.txt', 'r', encoding='utf-8') as f:
+        while True:
+            content = f.readline()
+            if not content:
+                break
+            count=int(content[content.index("=")+1:].strip().replace(",",""))
+            print(f"File count: {count}")
+            total_words+= count
+    print(f"Total words: {total_words:,} words")
 
 docs_path = "./htdocs"
 docs_path_cn = "./htdocs_cn"
