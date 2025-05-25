@@ -6,6 +6,8 @@ import time
 import volcenginesdkcore
 import volcenginesdktranslate20250301
 
+from my_log import log
+
 
 class VolcanTranslate:
     def __init__(self,id="",key=""):
@@ -21,12 +23,12 @@ class VolcanTranslate:
         self.configuration.debug = False  # 是否开启调试
         self.configuration.logger_file = "sdk.log"
         if os.path.exists("volcan_engine_translate.key") is False:
-            print(f"volcan_engine_translate.key 文件不存在，使用传入参数{id} {key}进行初始化")
+            log(f"volcan_engine_translate.key 文件不存在，使用传入参数{id} {key}进行初始化")
             #尝试读取环境变量
             self.configuration.ak = id # 用户的access key
             self.configuration.sk = key  # 用户的secret key
         else:
-            print("volcan_engine_translate.key 文件存在，继续执行")
+            log("volcan_engine_translate.key 文件存在，继续执行")
             with open("volcan_engine_translate.key", "r",encoding="utf-8") as f:
                 s = f.read()
                 str_dict: dict = json.loads(s)
@@ -65,12 +67,12 @@ class VolcanTranslate:
         try:
             # 复制代码运行示例，请自行打印API返回值。
             result = self.api_instnace.translate_text(body=translate_text_request)
-            # print(result)
+            # log(result)
             return result
             
         except Exception as e:
             # 复制代码运行示例，请自行打印API错误信息。
-            print("Exception when calling api: %s\n" % e)
+            log("Exception when calling api: %s\n" % e)
             return None
     
 if __name__ == "__main__":
@@ -87,24 +89,24 @@ if __name__ == "__main__":
         text_list = [data]
         result = volcan_translate.translate_text(source_language, target_language, text_list)
         if result is not None:
-            print(type(result))
+            log(type(result))
         # 处理返回结果
         if result is None:
-            print("没有返回结果")
+            log("没有返回结果")
             return None
         
         
     i18n = "i18n/en/docusaurus-plugin-content-docs/current"
     with open(f"../rhino-doc/{i18n}/docs/scopes_and_contexts.md", "r", encoding="utf-8") as f:
         data = f.read()
-        print("正在翻译文件：length:", len(data))
+        log("正在翻译文件：length:", len(data))
         count=math.ceil(len(data)/ 5000.0)
         for i in range(count):
             sub_data = data[i * 5000: (i + 1) * 5000]
-            print(f"正在翻译第{i + 1}段数据 {len(sub_data)}")
+            log(f"正在翻译第{i + 1}段数据 {len(sub_data)}")
             if len(sub_data) == 0:
                 continue
             translate_text(sub_data)
             # time.sleep(1)
-        print("翻译完成")
+        log("翻译完成")
         

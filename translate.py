@@ -18,7 +18,7 @@ from my_log import log
 from utils import timeCost
 import ast
 
-# from azure_openai_cli import call_chatgpt
+from azure_openai_cli import call_chatgpt
 import volcan_translate
 import volcenginesdktranslate20250301
 
@@ -74,7 +74,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
         json_str = json.dumps(
             arrays, ensure_ascii=False).replace("'", "&apos;")
         prompt = f"翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出：{json_str}"
-        # return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
+        return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
         return task.append(volcan_trans(arrays))
     else:
@@ -118,7 +118,11 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
             size = len({f"{i}": node_text})
             count_leng += size
             # TextList[String] 待翻译列表列表长度不超过16 总文本长度不超过5000字符
-            if len(text_will_trans_array) < 16 and chunk_size+size < CHUNCK_SIZE:
+            if method == "volcan":
+                condition_size_arry = len(text_will_trans_array) < 16
+            elif method == "chatgpt":
+                condition_size_arry = len(text_will_trans_array) < 100
+            if condition_size_arry and chunk_size+size < CHUNCK_SIZE:
                 chunk_size += size
             else:
                 chunk_size = 0
@@ -173,24 +177,26 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
 #     return arry
 
 def count_words():
-    total_words =0
+    total_words = 0
     with open(f'./words_length.txt', 'r', encoding='utf-8') as f:
         while True:
             content = f.readline()
             if not content:
                 break
-            count=int(content[content.index("=")+1:].strip().replace(",",""))
-            print(f"File count: {count}")
-            total_words+= count
-    print(f"Total words: {total_words:,} words")
+            count = int(content[content.index("=") +
+                        1:].strip().replace(",", ""))
+            log(f"File count: {count}")
+            total_words += count
+    log(f"Total words: {total_words:,} words")
 
-docs_path = "./htdocs"
-docs_path_cn = "./htdocs_cn"
-# docs_path = "../ffmpeg-docs-website"
-# docs_path_cn = "../ffmpeg-docs-website/htdocs_cn"
+
+# docs_path = "./htdocs"
+# docs_path_cn = "./htdocs_cn"
+docs_path = "../ffmpeg-docs-website/ffmpeg-origin_newest"
+docs_path_cn = "../ffmpeg-docs-website/htdocs_cn"
 if __name__ == "__main__":
     args = sys.argv
-    method = "volcan"
+    method = "chatgpt"
     id = ""
     key = ""
     if len(args) > 1:
@@ -203,7 +209,7 @@ if __name__ == "__main__":
     volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
-    def main(method):
+    def main(method, file_spec="*.html",force_replace=False):
         # try:
         #     os.remove(docs_path_cn)
         # except Exception as e:
@@ -212,7 +218,7 @@ if __name__ == "__main__":
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
         # os.system(f"rsync -av --exclude='*.html' {docs_path}/ {docs_path_cn}/")
-        list_files = glob.glob(f"{docs_path}/*.html")
+        list_files = glob.glob(f"{docs_path}/{file_spec}")
         log(f"list *.html files size= {len(list_files)}")
         list.sort(list_files)
         length = 0
@@ -224,7 +230,7 @@ if __name__ == "__main__":
         for item in list_files:  # import os
             log(f"===> start translate: {item}")
             base_name = os.path.basename(item)
-            if os.path.exists(f"{docs_path_cn}/{base_name}"):
+            if not force_replace and os.path.exists(f"{docs_path_cn}/{base_name}"):
                 log(f"===> file exist: {docs_path_cn}/{base_name}")
                 continue
             with open(item, "r", encoding="utf-8") as f:
@@ -239,4 +245,4 @@ if __name__ == "__main__":
                 f"===> complete trans file : {base_name:<30} read size={len(data):>12,}    total size={length:>12,} string_len={str_length:>12,}"
             )
 
-    main(method)
+    main(method, file_spec="*.html",force_replace=True)
