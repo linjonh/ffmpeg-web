@@ -94,7 +94,7 @@ def log(msg, level=logging.INFO, frameIndex=1):
         # log(f"-------{msg}")
         msg = repr(msg)
 
-    callStack = f"{msg:<80} {callStack}"
+    callStack = f"{msg} {callStack}"
 
     match level:
         case logging.DEBUG:

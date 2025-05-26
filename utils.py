@@ -10,7 +10,12 @@ def timeCost(func):
             result = func(*args, **argss)
             end = time.time()
             duration = end - start
-            print(f"{func.__name__} cost:{duration:.3f}s")
+            #把秒转化为时分秒格式：
+            hours = duration // 3600
+            minutes = (duration % 3600) // 60
+            seconds = duration % 60
+            duration_str = f"{int(hours)}:{int(minutes)}:{int(seconds)}"            
+            print(f"{func.__name__} cost: {duration_str}= {duration} seconds")
         except Exception as e:
             traceback.print_exc()
             print(e)

@@ -74,7 +74,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
     if trans_method == "chatgpt":
         json_str = json.dumps(
             arrays, indent=4, ensure_ascii=False).replace("'", "&apos;")
-        prompt = f"翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出：{json_str}"
+        prompt = f"翻译下json的values文案，直接返回翻译后的json对象。如果values文案有markdown标记，保留标记，最后以纯json文本格式输出：{json_str}"
         return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
         return task.append(volcan_trans(arrays))
@@ -191,7 +191,8 @@ async def handle_md_file(html: str, base_name: str, method: str):
             append_task(task, text_will_trans_array, method)
             text_will_trans_array.clear()
         text_will_trans_array[line_number]=line_str
-    
+    if chunk_size > 0 and chunk_size < CHUNCK_SIZE:
+        append_task(task, text_will_trans_array, method)
     all_results = await asyncio.gather(*task)
     log(f"all_results={len(all_results)} type={type(all_results)}")
     for line_number, rep in enumerate(all_results):
@@ -264,8 +265,11 @@ if __name__ == "__main__":
         list_files = []
         for file in file_spec:
             list_files += glob.glob(f"{docs_path}/{file}", recursive=recursive)
-            log(f"list files size= {len(list_files)}")
+            log(f"list {file} size= {len(list_files)}")
         list.sort(list_files)
+        # for file in list_files:
+        #     log(f"found {file}")
+        # return
         length = 0
         str_length = 0
         pool = ThreadPoolExecutor(
@@ -274,8 +278,8 @@ if __name__ == "__main__":
         jobs = []
         for item in list_files:  # import os
             item:str
-            log(f"===> start translate: {item}")
             traget_path = item.replace(docs_path, "")
+            log(f"===> start translate: {traget_path}")
             target_dir = f"{docs_path_cn}/{traget_path}"
             # make dir
             if not os.path.exists(os.path.dirname(target_dir)):
@@ -297,5 +301,5 @@ if __name__ == "__main__":
             traget_path, data, length = job.result()
             str_length += length
             log(f"===> complete trans file : {traget_path:<30} read size={len(data):>12,} total size={length:>12,} string_len={str_length:>12,}")
-
-    main(method, "*.md", "*.mdx", force_replace=True, recursive=True,is_md_file=True)
+            
+    main(method,"**/*.md", "**/*.mdx" , force_replace=True, recursive=True,is_md_file=True)
