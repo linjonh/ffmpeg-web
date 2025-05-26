@@ -204,7 +204,7 @@ async def handle_md_file(html: str, base_name: str, method: str):
         rep:dict[int,str]
         translated_arry.update(rep)
     log(f"===> translate_arry={translated_arry}")
-    str_doc="".join(translated_arry.values())
+    str_doc="\n".join(translated_arry.values())
     if str_doc!=None or str_doc!="":
         path=f'{docs_path_cn}/{base_name}'
         with open(path, 'w') as f:
