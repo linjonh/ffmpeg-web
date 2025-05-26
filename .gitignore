@@ -12,3 +12,4 @@ __pycache__
 *.key
 *.log
 /ffmpeg/
+.linux_venv

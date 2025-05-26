@@ -2,6 +2,7 @@ import asyncio
 from concurrent import futures
 from concurrent.futures import ThreadPoolExecutor
 import json
+import math
 import random
 import re
 import sys
@@ -81,7 +82,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
         raise ValueError("不支持的翻译方法！")
 
 
-async def handle_html_file(html: str, base_name: str, method: str) -> int:
+async def handle_html_file(html: str, base_name: str, method: str):
     soup = BeautifulSoup(html, "html.parser")
     count_leng = 0
     chunk_size = 0
@@ -118,6 +119,7 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
             size = len({f"{i}": node_text})
             count_leng += size
             # TextList[String] 待翻译列表列表长度不超过16 总文本长度不超过5000字符
+            condition_size_arry=None
             if method == "volcan":
                 condition_size_arry = len(text_will_trans_array) < 16
             elif method == "chatgpt":
@@ -143,12 +145,13 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
             log(f"{i} rep is None")
             continue
         # ast.literal_eval(rep)
+        rep:dict[int,str]
         translated_arry.update(rep)
     log(f"===> translate_arry={translated_arry}")
     for i, node in nodes.items():
         node: PageElement
         log(f"【{i}】before {node}")
-        node_text = translated_arry.get(str(i), "").strip()
+        node_text = translated_arry.get(str(i),"").strip()
         if node_text != "":
             node.replace_with(node_text)
             log(f"【{i}】after ====> {node_text}")
@@ -166,8 +169,48 @@ async def handle_html_file(html: str, base_name: str, method: str) -> int:
     # end overwrite file
         log(f"【save file】: {docs_path_cn}/{base_name} total text size={count_leng:>12,}")
 
-    return count_leng
+    return base_name, html, count_leng
 
+async def handle_md_file(html: str, base_name: str, method: str):
+    count_leng=0
+    # chunk_block_size=math.ceil(len(html)/(CHUNCK_SIZE*1.0))
+    input_array=html.split("\n")
+    log(f"input_array size={len(input_array)}")
+    text_will_trans_array: dict[int, str] = {}
+    translated_arry: dict[int, str] = {}
+    task=[]
+    chunk_size=0
+    for line_number in range(len(input_array)):
+        line_str = input_array[line_number]
+        count_leng+=len(line_str)
+        
+        if chunk_size+len(line_str)<CHUNCK_SIZE:
+            chunk_size+=len(line_str)
+        else:
+            chunk_size=0
+            append_task(task, text_will_trans_array, method)
+            text_will_trans_array.clear()
+        text_will_trans_array[line_number]=line_str
+    
+    all_results = await asyncio.gather(*task)
+    log(f"all_results={len(all_results)} type={type(all_results)}")
+    for line_number, rep in enumerate(all_results):
+        # json_str=rep.replace("\"","\\\"").replace("'","\"")
+        log(f"{line_number} {type(rep)} rep={rep}")
+        if rep is None:
+            log(f"{line_number} rep is None")
+            continue
+        # ast.literal_eval(rep)
+        rep:dict[int,str]
+        translated_arry.update(rep)
+    log(f"===> translate_arry={translated_arry}")
+    str_doc="".join(translated_arry.values())
+    if str_doc!=None or str_doc!="":
+        path=f'{docs_path_cn}/{base_name}'
+        with open(path, 'w') as f:
+            f.write(str_doc)
+            log(f"【save file】: {path:<40} total text size={count_leng:>12,}")
+    return  base_name, html, count_leng
 
 # async def start_trans(text: list) -> str:
 #     trans_txt = call_chatgpt(prompt=f"翻译下数组里的文案，返回数组：{text}", is_data_json=False)
@@ -192,8 +235,8 @@ def count_words():
 
 # docs_path = "./htdocs"
 # docs_path_cn = "./htdocs_cn"
-docs_path = "../ffmpeg-docs-website/ffmpeg-origin_newest"
-docs_path_cn = "../ffmpeg-docs-website/htdocs_cn"
+docs_path = "../docs-OpenWebUi/i18n/en/docusaurus-plugin-content-docs/current"
+docs_path_cn = "../docs-OpenWebUi/docs"
 if __name__ == "__main__":
     args = sys.argv
     method = "chatgpt"
@@ -209,7 +252,7 @@ if __name__ == "__main__":
     volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
-    def main(method, file_spec="*.html", force_replace=False):
+    def main(method, *file_spec, force_replace=False, recursive=False,is_md_file=False):
         # try:
         #     os.remove(docs_path_cn)
         # except Exception as e:
@@ -218,8 +261,10 @@ if __name__ == "__main__":
         os.makedirs(docs_path_cn, exist_ok=True)
         # 复制文件
         # os.system(f"rsync -av --exclude='*.html' {docs_path}/ {docs_path_cn}/")
-        list_files = glob.glob(f"{docs_path}/{file_spec}")
-        log(f"list *.html files size= {len(list_files)}")
+        list_files = []
+        for file in file_spec:
+            list_files += glob.glob(f"{docs_path}/{file}", recursive=recursive)
+            log(f"list files size= {len(list_files)}")
         list.sort(list_files)
         length = 0
         str_length = 0
@@ -228,21 +273,29 @@ if __name__ == "__main__":
         )
         jobs = []
         for item in list_files:  # import os
+            item:str
             log(f"===> start translate: {item}")
-            base_name = os.path.basename(item)
-            if not force_replace and os.path.exists(f"{docs_path_cn}/{base_name}"):
-                log(f"===> file exist: {docs_path_cn}/{base_name}")
+            traget_path = item.replace(docs_path, "")
+            target_dir = f"{docs_path_cn}/{traget_path}"
+            # make dir
+            if not os.path.exists(os.path.dirname(target_dir)):
+                os.makedirs(os.path.dirname(target_dir),exist_ok=True)
+            if not force_replace and os.path.exists(target_dir):
+                log(f"===> file exist: {target_dir}")
                 continue
             with open(item, "r", encoding="utf-8") as f:
                 # Comment:
                 data = f.read()
                 length += len(data)
-                jobs.append(pool.submit(
-                    asyncio.run, handle_html_file(data, base_name, method)))
+                if is_md_file:
+                    jobs.append(pool.submit(
+                        asyncio.run, handle_md_file(data, traget_path, method)))
+                else:
+                    jobs.append(pool.submit(
+                        asyncio.run, handle_html_file(data, traget_path, method)))
         for job in futures.as_completed(jobs):
-            str_length += job.result()
-            log(
-                f"===> complete trans file : {base_name:<30} read size={len(data):>12,}    total size={length:>12,} string_len={str_length:>12,}"
-            )
+            traget_path, data, length = job.result()
+            str_length += length
+            log(f"===> complete trans file : {traget_path:<30} read size={len(data):>12,} total size={length:>12,} string_len={str_length:>12,}")
 
-    main(method, file_spec="*.html", force_replace=True)
+    main(method, "*.md", "*.mdx", force_replace=True, recursive=True,is_md_file=True)
