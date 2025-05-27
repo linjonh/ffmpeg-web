@@ -191,7 +191,10 @@ async def handle_md_file(html: str, base_name: str, method: str, prompt):
             append_task(task, text_will_trans_array, method, prompt)
             text_will_trans_array.clear()
         text_will_trans_array[line_number] = line_str
-
+        
+    if chunk_size > 0 and chunk_size < CHUNCK_SIZE:
+        append_task(task, text_will_trans_array, method, prompt)
+        
     all_results = await asyncio.gather(*task)
     log(f"all_results={len(all_results)} type={type(all_results)}")
     for line_number, rep in enumerate(all_results):
