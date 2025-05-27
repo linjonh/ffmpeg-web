@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 from concurrent import futures
 from concurrent.futures import ThreadPoolExecutor
@@ -48,8 +49,7 @@ async def volcan_trans(arrays: dict[int, str]):
     }"""
     time.sleep(0.1*random.randrange(1, 10))
     log(f"===> start call  volcenginesdk API arrays size={len(arrays)}")
-    res: volcenginesdktranslate20250301.models.translate_text_response.TranslateTextResponse = volcan_translate_.translate_text(
-        "en", "zh", list(arrays.values()))
+    res: volcenginesdktranslate20250301.models.translate_text_response.TranslateTextResponse = volcan_translate_.translate_text("en", "zh", list(arrays.values()))
     log(f"res={res.to_dict()} type={type(res)}")
     arry = res.to_dict().get("translation_list", [])
     # res={'translation_list': [{'detected_source_language': '', 'translation': '关于FFmpeg'}, {'detected_source_language': '', 'translation': 'FFmpeg'}, {'detected_source_language': '', 'translation': '关于'}, {'detected_source_language': '', 'translation': '新闻'}, {'detected_source_language': '', 'translation': '下载'}, {'detected_source_language': '', 'translation': '文档'}, {'detected_source_language': '', 'translation': '社区'}, {'detected_source_language': '', 'translation': '行为准则'}, {'detected_source_language': '', 'translation': '邮件列表'}, {'detected_source_language': '', 'translation': 'IRC'}, {'detected_source_language': '', 'translation': '论坛'}, {'detected_source_language': '', 'translation': '错误报告'}, {'detected_source_language': '', 'translation': '维基'}, {'detected_source_language': '', 'translation': '开发商'}, {'detected_source_language': '', 'translation': '源代码'}, {'detected_source_language': '', 'translation': '贡献'}, {'detected_source_language': '', 'translation': '命运'}, {'detected_source_language': '', 'translation': '代码覆盖率'}, {'detected_source_language': '', 'translation': '通过SPI提供资金'}, {'detected_source_language': '', 'translation': '更多'}, {'detected_source_language': '', 'translation': '捐赠'}, {'detected_source_language': '', 'translation': '聘请开发人员'}, {'detected_source_language': '', 'translation': '联系方式'}, {'detected_source_language': '', 'translation': '保安'}, {'detected_source_language': '', 'translation': '法律'}, {'detected_source_language': '', 'translation': '关于FFmpeg'}, {'detected_source_language': '', 'translation': 'FFmpeg是领先的多媒体框架，能够'}, {'detected_source_language': '', 'translation': '译码'}, {'detected_source_language': '', 'translation': '编码'}, {'detected_source_language': '', 'translation': '转码'}, {'detected_source_language': '', 'translation': '多路复用器'}, {'detected_source_language': '', 'translation': 'demux'}, {'detected_source_language': '', 'translation': '溪流'}, {'detected_source_language': '', 'translation': '过滤器'}, {'detected_source_language': '', 'translation': '和'}, {'detected_source_language': '', 'translation': '玩'}, {'detected_source_language': '', 'translation': '几乎任何东西\n人类和机器创造的。它支持最模糊的\n古老的格式直到最前沿。不管他们是不是\n由某个标准委员会、社区或公司设计。它是\n也高度可移植：FFmpeg编译、运行和通过我们的测试基础设施'}, {'detected_source_language': '', 'translation': '命运'}, {'detected_source_language': '', 'translation': 'LinuxMac OS X\nMicrosoft Windows、BSD、Solaris等下的各种构建\n环境、机器架构和配置。'}, {'detected_source_language': '', 'translation': '它包含libavcodec、libavutil、libavformat、libavfilter、libavments、\n应用程序可以使用的libswscale和libswresample。\n以及可用于\n最终用户'}, {'detected_source_language': '', 'translation': '转码'}, {'detected_source_language': '', 'translation': '和'}, {'detected_source_language': '', 'translation': '演奏'}, {'detected_source_language': '', 'translation': 'FFmpeg项目试图提供最好 的技术可能\n适用于应用程序开发人员和最终用户的解决方案。实现\n这是我们结合了可用的最佳免费软件选项。我们稍微\n支持我们自 己的代码，以保持对其他库的依赖度低，并\n最大化FFmpeg部分之间的代码共享。\n只要“最好”的问题不能回答，我们就支持两者\n供最 终用户选择的选项。'}, {'detected_source_language': '', 'translation': 'FFmpeg欢迎每个人，也欢迎所有的贡献。\n我们很高兴收到补丁，拉取请求，bug报告，捐赠\n或任何其他类型的贡献。'}, {'detected_source_language': '', 'translation': '安全性是重中 之重，代码审查始终与\n考虑安全。尽管由于大量代码接触\n不受信任的数据安全问题是不可避免的，因此我们提供\n在以下情况下尽快 更新我们最后一个稳定版本\n发现新的安全问题。'}, {'detected_source_language': '', 'translation': 'FFmpeg工具'}, {'detected_source_language': '', 'translation': 'ffmpeg'}, {'detected_source_language': '', 'translation': '一个'}, {'detected_source_language': '', 'translation': '命令行工具'}, {'detected_source_language': '', 'translation': '转换多媒体文件\n格式之间'}, {'detected_source_language': '', 'translation': '外放'}, {'detected_source_language': '', 'translation': '一个基于SDL和FFmpeg库的简单媒体播放器'}, {'detected_source_language': '', 'translation': '远红外探测器'}, {'detected_source_language': '', 'translation': '一个简单的多媒体流分析器'}, {'detected_source_language': '', 'translation': '面向开发人员的FFmpeg 库'}, {'detected_source_language': '', 'translation': 'libavutil'}, {'detected_source_language': '', 'translation': '是一个包含函数的库\n简化编程，包括随机数生成器、数据\n结构、数学例程、核心多媒体实用程序等等\n更多。'}, {'detected_source_language': '', 'translation': 'libavcodec'}, {'detected_source_language': '', 'translation': '是一个包含解码器和编码器的库\n用于音频/视频编解码器。'}, {'detected_source_language': '', 'translation': 'libavformat'}, {'detected_source_language': '', 'translation': '是一个包含解复用器和\n多媒体容器格式的混音器。'}, {'detected_source_language': '', 'translation': '软 件库'}, {'detected_source_language': '', 'translation': '是一个包含输入和输出的库\n用于抓取和渲染许多常见多媒体的设备\n输入/输出软件框架，包括Video4Linux、Video4Linux2、\nVfW和ALSA。'}, {'detected_source_language': '', 'translation': 'libavfilter'}, {'detected_source_language': '', 'translation': '是一个包含媒体过滤器的库。'}, {'detected_source_language': '', 'translation': '自由尺度'}, {'detected_source_language': '', 'translation': '是一个执行高度优化图像的库\n缩放和色彩空间/像素格式转换操作。'}, {'detected_source_language': '', 'translation': 'libswresample'}, {'detected_source_language': '', 'translation': '是一个执行高度优化的库\n音频重采样、重矩阵和样本格式转换操作。'}, {'detected_source_language': '', 'translation': '托管提供者'}, {'detected_source_language': '', 'translation': 'telepoint.bg'}]}
@@ -65,16 +65,15 @@ async def volcan_trans(arrays: dict[int, str]):
     return json.loads(json.dumps(arrays, ensure_ascii=False))
 
 
-def append_task(task: list, text_array: dict[int, str], trans_method: str = "volcan"):
+def append_task(task: list, text_array: dict[int, str], trans_method: str = "volcan", prompt_tips=""):
     # return task.append(sync_api(prompt=f"翻译下数组里的文案，返回数组：{text_array}"))
     arrays = text_array.copy()
     if len(arrays) == 0:
         return None
     log(f"翻译源数组大小：size={len(arrays.values())}")
     if trans_method == "chatgpt":
-        json_str = json.dumps(
-            arrays, indent=4, ensure_ascii=False).replace("'", "&apos;")
-        prompt = f"翻译下json的values文案，直接返回翻译后的json对象。如果values文案有markdown标记，保留标记，最后以纯json文本格式输出：{json_str}"
+        json_str = json.dumps(arrays, indent=4, ensure_ascii=False).replace("'", "&apos;")
+        prompt = f"{prompt_tips}：{json_str}"
         return task.append(call_chatgpt(prompt=prompt, is_data_json=True))
     elif trans_method == "volcan":
         return task.append(volcan_trans(arrays))
@@ -82,7 +81,7 @@ def append_task(task: list, text_array: dict[int, str], trans_method: str = "vol
         raise ValueError("不支持的翻译方法！")
 
 
-async def handle_html_file(html: str, base_name: str, method: str):
+async def handle_html_file(html: str, base_name: str, method: str, prompt):
     soup = BeautifulSoup(html, "html.parser")
     count_leng = 0
     chunk_size = 0
@@ -119,7 +118,7 @@ async def handle_html_file(html: str, base_name: str, method: str):
             size = len({f"{i}": node_text})
             count_leng += size
             # TextList[String] 待翻译列表列表长度不超过16 总文本长度不超过5000字符
-            condition_size_arry=None
+            condition_size_arry = None
             if method == "volcan":
                 condition_size_arry = len(text_will_trans_array) < 16
             elif method == "chatgpt":
@@ -128,13 +127,13 @@ async def handle_html_file(html: str, base_name: str, method: str):
                 chunk_size += size
             else:
                 chunk_size = 0
-                append_task(task, text_will_trans_array, method)
+                append_task(task, text_will_trans_array, method, prompt)
                 text_will_trans_array.clear()
             # 后置递增添加
             text_will_trans_array[i] = node_text
             nodes[i] = node
     if chunk_size > 0 and chunk_size < CHUNCK_SIZE:
-        append_task(task, text_will_trans_array, method)
+        append_task(task, text_will_trans_array, method, prompt)
 
     all_results = await asyncio.gather(*task)
     log(f"all_results={len(all_results)} type={type(all_results)}")
@@ -145,13 +144,13 @@ async def handle_html_file(html: str, base_name: str, method: str):
             log(f"{i} rep is None")
             continue
         # ast.literal_eval(rep)
-        rep:dict[int,str]
+        rep: dict[int, str]
         translated_arry.update(rep)
     log(f"===> translate_arry={translated_arry}")
     for i, node in nodes.items():
         node: PageElement
         log(f"【{i}】before {node}")
-        node_text = translated_arry.get(str(i),"").strip()
+        node_text = translated_arry.get(str(i), "").strip()
         if node_text != "":
             node.replace_with(node_text)
             log(f"【{i}】after ====> {node_text}")
@@ -171,28 +170,28 @@ async def handle_html_file(html: str, base_name: str, method: str):
 
     return base_name, html, count_leng
 
-async def handle_md_file(html: str, base_name: str, method: str):
-    count_leng=0
+
+async def handle_md_file(html: str, base_name: str, method: str, prompt):
+    count_leng = 0
     # chunk_block_size=math.ceil(len(html)/(CHUNCK_SIZE*1.0))
-    input_array=html.split("\n")
+    input_array = html.split("\n")
     log(f"input_array size={len(input_array)}")
     text_will_trans_array: dict[int, str] = {}
     translated_arry: dict[int, str] = {}
-    task=[]
-    chunk_size=0
+    task = []
+    chunk_size = 0
     for line_number in range(len(input_array)):
         line_str = input_array[line_number]
-        count_leng+=len(line_str)
-        
-        if chunk_size+len(line_str)<CHUNCK_SIZE:
-            chunk_size+=len(line_str)
+        count_leng += len(line_str)
+
+        if chunk_size+len(line_str) < CHUNCK_SIZE:
+            chunk_size += len(line_str)
         else:
-            chunk_size=0
-            append_task(task, text_will_trans_array, method)
+            chunk_size = 0
+            append_task(task, text_will_trans_array, method, prompt)
             text_will_trans_array.clear()
-        text_will_trans_array[line_number]=line_str
-    if chunk_size > 0 and chunk_size < CHUNCK_SIZE:
-        append_task(task, text_will_trans_array, method)
+        text_will_trans_array[line_number] = line_str
+
     all_results = await asyncio.gather(*task)
     log(f"all_results={len(all_results)} type={type(all_results)}")
     for line_number, rep in enumerate(all_results):
@@ -202,16 +201,16 @@ async def handle_md_file(html: str, base_name: str, method: str):
             log(f"{line_number} rep is None")
             continue
         # ast.literal_eval(rep)
-        rep:dict[int,str]
+        rep: dict[int, str]
         translated_arry.update(rep)
     log(f"===> translate_arry={translated_arry}")
-    str_doc="\n".join(translated_arry.values())
-    if str_doc!=None or str_doc!="":
-        path=f'{docs_path_cn}/{base_name}'
+    str_doc = "\n".join(translated_arry.values())
+    if str_doc != None or str_doc != "":
+        path = f'{docs_path_cn}/{base_name}'
         with open(path, 'w') as f:
             f.write(str_doc)
             log(f"【save file】: {path:<40} total text size={count_leng:>12,}")
-    return  base_name, html, count_leng
+    return base_name, html, count_leng
 
 # async def start_trans(text: list) -> str:
 #     trans_txt = call_chatgpt(prompt=f"翻译下数组里的文案，返回数组：{text}", is_data_json=False)
@@ -220,6 +219,7 @@ async def handle_md_file(html: str, base_name: str, method: str):
 #     arry=json.loads(trans_txt)
 #     return arry
 
+
 def count_words():
     total_words = 0
     with open(f'./words_length.txt', 'r', encoding='utf-8') as f:
@@ -227,8 +227,7 @@ def count_words():
             content = f.readline()
             if not content:
                 break
-            count = int(content[content.index("=") +
-                        1:].strip().replace(",", ""))
+            count = int(content[content.index("=") + 1:].strip().replace(",", ""))
             log(f"File count: {count}")
             total_words += count
     log(f"Total words: {total_words:,} words")
@@ -236,24 +235,52 @@ def count_words():
 
 # docs_path = "./htdocs"
 # docs_path_cn = "./htdocs_cn"
-docs_path = "../docs-OpenWebUi/i18n/en/docusaurus-plugin-content-docs/current"
-docs_path_cn = "../docs-OpenWebUi/docs"
+# docs_path = "../docs-OpenWebUi/i18n/en/docusaurus-plugin-content-docs/current"
+# docs_path_cn = "../docs-OpenWebUi/docs"
 if __name__ == "__main__":
-    args = sys.argv
-    method = "chatgpt"
-    id = ""
-    key = ""
-    if len(args) > 1:
-        method = args[1]
-    if len(args) > 2:
-        id = args[2]
-    if len(args) > 3:
-        key = args[3]
-    log(f"method={method} id={id} key={key}")
-    volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
+
+    parser = argparse.ArgumentParser(
+        description="该程序是翻译语言程序，使用大模型或接口翻译，目前有ChatGPT和火山引擎，后续还会增加翻译的接口")
+    parser.add_argument("-src", "--src_dir", type=str, help="待翻译目录")
+    parser.add_argument("-dist", "--dist_dir", type=str, help="目标目录")
+    parser.add_argument("-m", "--method", type=str, help="翻译引擎方式", default="chatgpt")
+    parser.add_argument("-f", "--filter_files", type=str, help="过滤需要翻译的文件", default=["*.md", "*.mdx"], nargs="+")
+    parser.add_argument("-p", "--prompt", type=str, help="翻译引擎方式", default="翻译下数json的values文案，直接返回翻译后的json，不要输出markdown，要纯json文本格式输出，转义的字符保持原样输出")
+    parser.add_argument("-id", "--vol_id", type=str, default=None, help="volcan翻译所需的id")
+    parser.add_argument("-key", "--vol_key", type=str, default=None, help="volcan翻译所需的key")
+    parser.add_argument("-r", "--recusive", type=str, default=None, action="store_true", help="是否递归过滤子目录")
+    parser.add_argument("-force", "--force_relace", type=str, action="store_true", help="是否替换覆盖掉输出文件")
+    parser.add_argument("-html", "--is_html", type=str, default=None, action="store_true", help="是否为html类型处理方式")
+    args = parser.parse_args()
+
+    method = args.method
+    docs_path = args.src_dir
+    docs_path_cn = args.dist_dir
+    id = args.vol_id
+    key = args.vol_key
+    prompt = args.prompt
+    filter_files = args.filter_files
+    recursive = args.recusive
+    force_replace = args.force_relace
+    is_md_file = not args.is_html
+    log(f"method={method} src_dir={docs_path} dist_dir={docs_path_cn} filter_files={filter_files} id={id} key={key} recursive={recursive} force_replace={force_replace} is_md_file={is_md_file},prompt={prompt}")
+
+    # def test_args(*filter):
+    #     print(type(filter))
+    #     print(filter)
+    #     for s in filter:
+    #         print(type(s))
+    #         print(s)
+
+    # test_args(filter_files)
+
+    # sys.exit(1)
+
+    if method == "volcan":
+        volcan_translate_ = volcan_translate.VolcanTranslate(id=id, key=key)
 
     @timeCost
-    def main(method, *file_spec, force_replace=False, recursive=False,is_md_file=False):
+    def main(method, *file_spec, force_replace=False, recursive=False, is_md_file=False, prompt=prompt):
         # try:
         #     os.remove(docs_path_cn)
         # except Exception as e:
@@ -265,25 +292,20 @@ if __name__ == "__main__":
         list_files = []
         for file in file_spec:
             list_files += glob.glob(f"{docs_path}/{file}", recursive=recursive)
-            log(f"list {file} size= {len(list_files)}")
+            log(f"list files size= {len(list_files)}")
         list.sort(list_files)
-        # for file in list_files:
-        #     log(f"found {file}")
-        # return
         length = 0
         str_length = 0
-        pool = ThreadPoolExecutor(
-            max_workers=os.cpu_count(), thread_name_prefix="trans_file_thread"
-        )
+        pool = ThreadPoolExecutor(max_workers=os.cpu_count(), thread_name_prefix="trans_file_thread")
         jobs = []
         for item in list_files:  # import os
-            item:str
+            item: str
+            log(f"===> start translate: {item}")
             traget_path = item.replace(docs_path, "")
-            log(f"===> start translate: {traget_path}")
             target_dir = f"{docs_path_cn}/{traget_path}"
             # make dir
             if not os.path.exists(os.path.dirname(target_dir)):
-                os.makedirs(os.path.dirname(target_dir),exist_ok=True)
+                os.makedirs(os.path.dirname(target_dir), exist_ok=True)
             if not force_replace and os.path.exists(target_dir):
                 log(f"===> file exist: {target_dir}")
                 continue
@@ -292,14 +314,13 @@ if __name__ == "__main__":
                 data = f.read()
                 length += len(data)
                 if is_md_file:
-                    jobs.append(pool.submit(
-                        asyncio.run, handle_md_file(data, traget_path, method)))
+                    jobs.append(pool.submit(asyncio.run, handle_md_file(data, traget_path, method, prompt)))
                 else:
-                    jobs.append(pool.submit(
-                        asyncio.run, handle_html_file(data, traget_path, method)))
+                    jobs.append(pool.submit(asyncio.run, handle_html_file(data, traget_path, method, prompt)))
         for job in futures.as_completed(jobs):
             traget_path, data, length = job.result()
             str_length += length
             log(f"===> complete trans file : {traget_path:<30} read size={len(data):>12,} total size={length:>12,} string_len={str_length:>12,}")
-            
-    main(method,"**/*.md", "**/*.mdx" , force_replace=True, recursive=True,is_md_file=True)
+
+    main(method, *filter_files, force_replace=True,
+         recursive=True, is_md_file=True)
